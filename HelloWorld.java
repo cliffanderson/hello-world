@@ -9,6 +9,8 @@ public class HelloWorld {
 		
 		System.out.print("Today is ");
 		displayCurrentDate();
+		
+		displayFreeMemory();
 
 		System.out.println("Hello, World!");
 		System.out.println("Hello, Alice!");
@@ -23,5 +25,10 @@ public class HelloWorld {
 		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
 		Date date = new Date();
 		System.out.println(dateFormat.format(date));
+	}
+	
+	private static void displayFreeMemory() {
+		long freeBytes = Runtime.getRuntime().freeMemory();
+		System.out.println("Free bytes: " + freeBytes);
 	}
 }
